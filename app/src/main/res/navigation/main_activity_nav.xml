@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.navigationodev.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/aGecis"
+            app:destination="@id/AFragment" />
+        <action
+            android:id="@+id/xGecis"
+            app:destination="@id/XFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.example.navigationodev.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/bGecis"
+            app:destination="@id/BFragment"
+            app:popUpTo="@id/AFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.example.navigationodev.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/bYGecis"
+            app:destination="@id/YFragment"
+            app:popUpTo="@id/BFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/XFragment"
+        android:name="com.example.navigationodev.XFragment"
+        android:label="fragment_x"
+        tools:layout="@layout/fragment_x" >
+        <action
+            android:id="@+id/xYGecis"
+            app:destination="@id/YFragment"
+            app:popUpTo="@id/XFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/YFragment"
+        android:name="com.example.navigationodev.YFragment"
+        android:label="fragment_y"
+        tools:layout="@layout/fragment_y" >
+        <action
+            android:id="@+id/anaSayfaGecis"
+            app:destination="@id/anaSayfaFragment"
+            app:popUpTo="@id/YFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
